@@ -1,7 +1,7 @@
 from PIL import Image
 
 #Access Image
-im = Image.open('test3.jpg')
+im = Image.open('input_photos/test3.jpg')
 width = im.size[0]
 height = im.size[1]
 #Start with Three Horizontal Pictures
@@ -20,6 +20,6 @@ if height*3 < width: #3 Squares
     threeleft.paste(im.crop(crop_dimensions[0]))
     threemiddle.paste(im.crop(crop_dimensions[1]))
     threeright.paste(im.crop(crop_dimensions[2]))
-    threeleft.save('left3.jpeg', 'jpeg')
-    threemiddle.save('middle3.jpeg', 'jpeg')
-    threeright.save('right3.jpeg', 'jpeg')
+    threeleft.save('output_photos/left3.jpeg', 'jpeg')
+    threemiddle.save('output_photos/middle3.jpeg', 'jpeg')
+    threeright.save('output_photos/right3.jpeg', 'jpeg')
