@@ -9,9 +9,9 @@ height = im.size[1]
 if height*3 < width: #3 Squares
     squaresize = (height, height)
     diff = (width - (height*3))/2
-    threeleft = Image.new('RGBA', squaresize)
-    threemiddle =  Image.new('RGBA', squaresize)
-    threeright = Image.new('RGBA', squaresize)
+    threeleft = Image.new('RGB', squaresize)
+    threemiddle =  Image.new('RGB', squaresize)
+    threeright = Image.new('RGB', squaresize)
     crop_dimensions = []
     for position in range(0, 3):
         left = (position*height)+diff
@@ -20,3 +20,6 @@ if height*3 < width: #3 Squares
     threeleft.paste(im.crop(crop_dimensions[0]))
     threemiddle.paste(im.crop(crop_dimensions[1]))
     threeright.paste(im.crop(crop_dimensions[2]))
+    threeleft.save('left3.jpeg', 'jpeg')
+    threemiddle.save('middle3.jpeg', 'jpeg')
+    threeright.save('right3.jpeg', 'jpeg')
