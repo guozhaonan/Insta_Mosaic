@@ -38,4 +38,4 @@ split_images(im)
 * Adding in Blank Photos
 * Adding in 3x3 Functionality
 * Adding in the ability to write words into photos
-* Adding in the ability to post directly to Instagra
+* Adding in the ability to post directly to Instagram
