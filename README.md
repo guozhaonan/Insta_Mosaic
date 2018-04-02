@@ -5,14 +5,14 @@ This is a script to split up photos to turn Instagram accounts into landing page
 
 # Dependencies
 
-⋅⋅* [Pillow](https://pillow.readthedocs.io/en/latest/)
+* [Pillow](https://pillow.readthedocs.io/en/latest/)
 
 # Usage
 
 ### Images must fit one of the following criteria:
 
-⋅⋅* height is less than one-third the width in pixels, these are very long images
-⋅⋅* height is less than the width * 1.5 in pixels
+* height is less than one-third the width in pixels, these are very long images
+* height is less than the width * 1.5 in pixels
 
 If they fit these criteria, first put your photo into the input_photos folder.
 
@@ -30,7 +30,7 @@ plit_images(im)
 
 # To Do:
 
-⋅⋅* Web App Functionality (current thoughts are Flask, Django, or Pyramid)
-⋅⋅* Adding in Blank Photos
-⋅⋅* Adding in 3x3 Functionality
-⋅⋅* Adding in the ability to write words into photos
+* Web App Functionality (current thoughts are Flask, Django, or Pyramid)
+* Adding in Blank Photos
+* Adding in 3x3 Functionality
+* Adding in the ability to write words into photos
