@@ -29,7 +29,7 @@ split_images(im)
 ```
 
 ### Sample Output
-![Screenshot from My Phone](https://github.com/guozhaonan/insta_landing/md_images/screenshot.jpg)
+![Screenshot from My Phone](https://github.com/guozhaonan/insta_landing/blob/master/md_images/screenshot.jpg)
 
 
 # To Do:
