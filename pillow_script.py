@@ -1,5 +1,7 @@
 from PIL import Image
 
+# The following are test images, in order to make use of this for your own images, save your images to a variable like below
+
 #Access Image 1
 im_two = Image.open('input_photos/test2.JPG')
 
