@@ -28,7 +28,7 @@ im = Image.open('input_photos/photo_name')
 split_images(im)
 ```
 
-### Sample Output
+# Sample Output
 ![Screenshot from My Phone](https://github.com/guozhaonan/insta_landing/blob/master/md_images/screenshot.jpg)
 
 
@@ -38,3 +38,4 @@ split_images(im)
 * Adding in Blank Photos
 * Adding in 3x3 Functionality
 * Adding in the ability to write words into photos
+* Adding in the ability to post directly to Instagram
