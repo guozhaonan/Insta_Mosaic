@@ -25,7 +25,7 @@ im = Image.open('input_photos/photo_name')
 ### Run the method at the bottom of the script:
 
 ```python
-split_images(im)
+split_images(im, 'image_name_base')
 ```
 
 # Sample Output
