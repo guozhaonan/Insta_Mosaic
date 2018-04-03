@@ -10,7 +10,7 @@ im_three = Image.open('input_photos/test3.jpg')
 
 #Start with Three Horizontal Pictures
 
-def split_images(image):
+def split_images(image, name):
     width = image.size[0]
     height = image.size[1]
     if height*3 <= width: #3 Squares
@@ -19,17 +19,12 @@ def split_images(image):
         threeleft = Image.new('RGB', three_square_size)
         threemiddle =  Image.new('RGB', three_square_size)
         threeright = Image.new('RGB', three_square_size)
-        crop_dimensions = []
+        image_array = [threeleft, threemiddle, threeright]
         for position in range(0, 3):
             left = (position*height)+diff
             right = ((position+1)*height)+diff
-            crop_dimensions.append((left, 0, right, height))
-        threeleft.paste(image.crop(crop_dimensions[0]))
-        threemiddle.paste(image.crop(crop_dimensions[1]))
-        threeright.paste(image.crop(crop_dimensions[2]))
-        threeleft.save('output_photos/left3.jpeg', 'jpeg')
-        threemiddle.save('output_photos/middle3.jpeg', 'jpeg')
-        threeright.save('output_photos/right3.jpeg', 'jpeg')
+            image_array[position].paste(image.crop((left, 0, right, height)))
+            image_array[position].save('output_photos/'+name+str(position)+'.jpeg', 'jpeg')
     elif height * 1.5 <= width: #6 Squares
         six_square_size = (height/2, height/2)
         diff = (width - (height*1.5))/2
@@ -59,4 +54,4 @@ def split_images(image):
         lower_left.save('output_photos/lowleft.jpeg', 'jpeg')
         lower_middle.save('output_photos/lowmiddle.jpeg', 'jpeg')
         lower_right.save('output_photos/lowright.jpeg', 'jpeg')
-split_images(im_two)
+split_images(im_three, "three_squares")
