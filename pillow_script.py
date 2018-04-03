@@ -34,24 +34,14 @@ def split_images(image, name):
         lower_left = Image.new('RGB', six_square_size)
         lower_middle = Image.new('RGB', six_square_size)
         lower_right = Image.new('RGB', six_square_size)
-        up = []
-        low = []
+        up = [upper_left, upper_middle, upper_right]
+        low = [lower_left, lower_middle, lower_right]
         for position in range(0, 3):
-            left_zero = (position*six_square_size[0])+diff
-            right_zero = ((position+1)*six_square_size[0])+diff
-            up.append((left_zero, 0, right_zero, six_square_size[0]))
-            low.append((left_zero, six_square_size[0], right_zero, six_square_size[0]*2))
-        upper_left.paste(image.crop(up[0]))
-        upper_middle.paste(image.crop(up[1]))
-        upper_right.paste(image.crop(up[2]))
-        lower_left.paste(image.crop(low[0]))
-        lower_middle.paste(image.crop(low[1]))
-        lower_right.paste(image.crop(low[2]))
+            left = (position*six_square_size[0])+diff
+            right = ((position+1)*six_square_size[0])+diff
+            up[position].paste(image.crop((left, 0, right, six_square_size[0])))
+            low[position].paste(image.crop((left, six_square_size[0], right, six_square_size[0]*2)))
+            up[position].save('output_photos/'+name+str(position)+'.jpeg', 'jpeg')
+            low[position].save('output_photos/'+name+str(position+3)+'.jpeg', 'jpeg')
 
-        upper_left.save('output_photos/upleft.jpeg', 'jpeg')
-        upper_middle.save('output_photos/upmiddle.jpeg', 'jpeg')
-        upper_right.save('output_photos/upright.jpeg', 'jpeg')
-        lower_left.save('output_photos/lowleft.jpeg', 'jpeg')
-        lower_middle.save('output_photos/lowmiddle.jpeg', 'jpeg')
-        lower_right.save('output_photos/lowright.jpeg', 'jpeg')
-split_images(im_three, "three_squares")
+split_images(im_two, "six_squares")
