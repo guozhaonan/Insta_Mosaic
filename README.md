@@ -41,7 +41,6 @@ split_images(im, 'image_name_base')
 # To Do:
 
 * Web App Functionality (current thoughts are Flask, Django, or Pyramid)
-* Adding in Blank Photos
-* Adding in 3x3 Functionality
+* Allowing Photo-Stitching
 * Adding in the ability to write words into photos
 * Adding in the ability to post directly to Instagram
