@@ -13,7 +13,7 @@ This is a script to split up photos to turn Instagram accounts into landing page
 
 * height is less than one-third the width in pixels, these are very long images(creates 3 images)
 * height is less than the width * 1.5 in pixels (creates 6 images)
-* height is the same as the width
+* height is the same as the width (creates 9 images)
 
 If they fit these criteria, first put your photo into the input_photos folder.
 
