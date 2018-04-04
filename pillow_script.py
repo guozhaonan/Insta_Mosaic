@@ -11,8 +11,10 @@ im_two = Image.open('input_photos/test2.jpg')
 #Access Image 3
 im_three = Image.open('input_photos/test3.jpg')
 
+#Access Image 4
+im_four = Image.open('input_photos/test4.png')
 #Start with Three Horizontal Pictures
-
+print im_four.size
 def split_images(image, name):
     width = image.size[0]
     height = image.size[1]
@@ -69,4 +71,10 @@ def split_images(image, name):
             up[position].save('output_photos/'+name+str(position)+'.jpeg', 'jpeg')
             middle[position].save('output_photos/'+name+str(position+3)+'.jpeg', 'jpeg')
             low[position].save('output_photos/'+name+str(position+6)+'.jpeg', 'jpeg')
-split_images(im_one, "square_squares")
+    elif width < height:
+        length = width//3
+        horiz_diff = width % 3
+        number_of_rows = height // length
+        vertical_diff = height % length
+
+# split_images(im_one, "square_squares")

@@ -30,8 +30,13 @@ split_images(im, 'image_name_base')
 ```
 
 # Sample Output
-![Screenshot from My Phone](https://github.com/guozhaonan/insta_landing/blob/master/md_images/screenshot.jpg)
 
+### Demonstration of 3 squares and 6 squares
+![Screenshot from My Phone](https://github.com/guozhaonan/insta_landing/blob/master/md_images/screenshot1.jpg)
+
+### Demonstration of 9 squares
+
+![Screenshot from My Phone](https://github.com/guozhaonan/insta_landing/blob/master/md_images/screenshot2.jpg)
 
 # To Do:
 
