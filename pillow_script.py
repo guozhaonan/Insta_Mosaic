@@ -14,7 +14,6 @@ im_three = Image.open('input_photos/test3.jpg')
 #Access Image 4
 im_four = Image.open('input_photos/test4.png')
 
-
 #Start with Three Horizontal Pictures
 def split_images(image, name):
     width = image.size[0]
@@ -57,13 +56,22 @@ def split_images(image, name):
             up[position].paste(image.crop((left, 0, right, square_square[0])))
             middle[position].paste(image.crop((left, square_square[0], right, square_square[0]*2)))
             low[position].paste(image.crop((left, square_square[0]*2, right, square_square[0]*3)))
-            up[position].save('output_photos/'+name+str(position)+'.jpeg', 'jpeg')
+            up[position]
             middle[position].save('output_photos/'+name+str(position+3)+'.jpeg', 'jpeg')
             low[position].save('output_photos/'+name+str(position+6)+'.jpeg', 'jpeg')
-    # elif width < height:
-    #     length = width//3
-    #     horiz_diff = width % 3
-    #     number_of_rows = height // length
-    #     vertical_diff = height % length
-
-split_images(im_one, "square_squares")
+    elif width < height:
+        length = width//3
+        horiz_diff = (width % 3)/2
+        number_of_rows = height // length
+        vertical_diff = (height % length)/2
+        im_array=[[0 for x in range(number_of_rows)] for y in range(3)]
+        for i in range(0,number_of_rows):
+            for j in range(0,3):
+                im_array[j][i] = Image.new('RGB', (length, length))
+                left = (j*length)+horiz_diff
+                right = ((j+1)*length)+horiz_diff
+                up = (i*length)+vertical_diff
+                down = ((i+1)*length)+vertical_diff
+                im_array[j][i].paste(im_four.crop((left,up,right,down)))
+                im_array[j][i].save('output_photos/'+name+str(j)+str(i)+'.jpeg', 'jpeg')
+split_images(im_four, "var_squares")
