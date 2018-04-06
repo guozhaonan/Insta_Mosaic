@@ -14,6 +14,8 @@ im_three = Image.open('input_photos/test3.jpg')
 #Access Image 4
 im_four = Image.open('input_photos/test4.png')
 
+im_five = Image.open('input_photos/test5.jpg')
+
 #Start with Three Horizontal Pictures
 def split_images(image, name):
     width = image.size[0]
@@ -72,6 +74,6 @@ def split_images(image, name):
                 right = ((j+1)*length)+horiz_diff
                 up = (i*length)+vertical_diff
                 down = ((i+1)*length)+vertical_diff
-                im_array[j][i].paste(im_four.crop((left,up,right,down)))
+                im_array[j][i].paste(image.crop((left,up,right,down)))
                 im_array[j][i].save('output_photos/'+name+str(j)+str(i)+'.jpeg', 'jpeg')
 split_images(im_four, "var_squares")
