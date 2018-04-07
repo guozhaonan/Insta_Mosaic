@@ -32,6 +32,8 @@ split_images(im, 'image_name_base')
 
 # Sample Output
 
+Test Instagram account [here](https://www.instagram.com/albertguo6154/)
+
 ### Demonstration of 3 squares and 6 squares
 ![Screenshot from My Phone](https://github.com/guozhaonan/insta_landing/blob/master/md_images/screenshot1.jpg)
 
