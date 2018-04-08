@@ -44,24 +44,7 @@ def split_images(image, name):
             low[position].paste(image.crop((left, six_square_size[0], right, six_square_size[0]*2)))
             up[position].save('output_photos/'+name+str(position)+'.jpeg', 'jpeg')
             low[position].save('output_photos/'+name+str(position+3)+'.jpeg', 'jpeg')
-    elif height == width:
-        square_square = (height/3, width/3)
-        up = [0,1,2]
-        middle = [0,1,2]
-        low = [0,1,2]
-        for position in range(0, 3):
-            up[position] = Image.new('RGB', square_square)
-            middle[position] = Image.new('RGB', square_square)
-            low[position] = Image.new('RGB', square_square)
-            left = position*square_square[0]
-            right = (position + 1)*square_square[0]
-            up[position].paste(image.crop((left, 0, right, square_square[0])))
-            middle[position].paste(image.crop((left, square_square[0], right, square_square[0]*2)))
-            low[position].paste(image.crop((left, square_square[0]*2, right, square_square[0]*3)))
-            up[position]
-            middle[position].save('output_photos/'+name+str(position+3)+'.jpeg', 'jpeg')
-            low[position].save('output_photos/'+name+str(position+6)+'.jpeg', 'jpeg')
-    elif width < height:
+    elif width <= height:
         length = width//3
         horiz_diff = (width % 3)/2
         number_of_rows = height // length
@@ -76,4 +59,3 @@ def split_images(image, name):
                 down = ((i+1)*length)+vertical_diff
                 im_array[j][i].paste(image.crop((left,up,right,down)))
                 im_array[j][i].save('output_photos/'+name+str(j)+str(i)+'.jpeg', 'jpeg')
-split_images(im_four, "var_squares")
